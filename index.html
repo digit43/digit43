@@ -3,34 +3,33 @@
 <head>
 <meta charset=utf-8 />
 <title>videojs-contrib-hls embed</title>
-  
-  <!--
 
-  Uses the latest versions of video.js and videojs-http-streaming.
-
-  To use specific versions, please change the URLs to the form:
-
-  <link href="https://unpkg.com/video.js@6.7.1/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js@6.7.1/dist/video.js"></script>
-  <script src="https://unpkg.com/@videojs/http-streaming@0.9.0/dist/videojs-http-streaming.js"></script>
-
-  -->
-
+<link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
   <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <style>
+    body {
+      font: 16px/1.5 sans-serif;
+      text-align:center;
+    }
+    body > div {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+  </style>
 </head>
 <body>
   <h1>Video.js Example Embed</h1>
 
-  <video-js id="my_video_1" class="vjs-default-skin" controls preload="auto" width="640" height="268">
-    <source src="https://d17irfqit4t6wm.cloudfront.net/videoplaybackisl.m3u8" type="application/x-mpegURL">
-  </video-js>
-  
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
-  
-  <script>
-    var player = videojs('my_video_1');
-  </script>
+  <video id="video_1" class="video-js vjs-default-skin" controls data-setup='{}' width="1080" height="720" >
+    <source src="https://d17irfqit4t6wm.cloudfront.net/videoplaybackisl.m3u8" type="application/x-mpegURL" label="HD" res="1080">
+    <source src="https://d17irfqit4t6wm.cloudfront.net/isl-video/isltest.m3u8" type="application/x-mpegURL" label="SD" res="480">
+    <source src="https://d17irfqit4t6wm.cloudfront.net/isl-video360/isltest360.m3u8" type="application/x-mpegURL" label="phone" res="360">
+  </video>
+
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
   
 </body>
 </html>
